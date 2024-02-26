@@ -1,1 +1,62 @@
-<h4>Login</h4>
+<div class="flex
+            mb-10
+            h-96 w-96 
+            bg-white 
+            drop-shadow-3xl
+            border-2
+            rounded">
+            <form class="basis-full">
+                <div class="flex flex-col justify-between">
+                    <div class=" flex flex-col text-center basis-12/12 pt-4">
+                        <span id="span-login" class="text-3xl">Login</span>
+                    </div>
+                    <div class="flex flex-col justify-start mt-4">
+                        <div class="flex flex-col">
+                            <label for="username" class="text-2xl font-bold pl-5">Email</label>
+                        </div>
+                        <div class="flex flex-col mx-5">
+                            <input type="text"
+                                    id="username"
+                                    class="input-field" 
+                                    name="username" 
+                                    required
+                                    placeholder="email@email.com">
+                        </div>  
+
+                    </div>
+                    <div class="flex flex-col justify-start mt-4">
+                        <div class="flex flex-col">
+                            <label for="password" class="text-2xl font-bold pl-5">Password</label>
+                        </div>
+                        <div class="flex flex-col mx-5">
+                            <input type="password"
+                                    id="password"
+                                    class="input-field"
+                                    name="password" 
+                                    required>
+                        </div>     
+                    </div>
+                    <div class="flex flex-row justify-between mt-4 pl-6 pr-2">
+                        <div class="basis-6/12 text-blue-600">
+                            <span>Forgot password?</span>
+                        </div>   
+                        <div class="basis-4/12 text-blue-600">
+                            <span>Register now!</span>
+                        </div>     
+                    </div>      
+                    <div class="flex flex-row justify-center mt-8">
+                        <div class="flex flex-col basis-4/12">
+                            <button type="submit"
+                                    class="border
+                                          bg-sky-500
+                                           hover:drop-shadow-2xl
+                                            py-3 rounded
+                                            text-lg
+                                            font-semibold">
+                                Iniciar sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>

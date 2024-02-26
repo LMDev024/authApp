@@ -1,0 +1,22 @@
+#span-login{
+    font-family: 'Oswald';
+    font-weight: bold;
+}
+.input-field {
+    border: none;
+    border-bottom: 2px solid #ccc; /* Línea horizontal */
+    background-color: transparent; /* Fondo transparente */
+    padding: 5px 0; /* Espacio interior */
+    font-size: 16px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+}
+
+/* Cambia el color del borde inferior cuando el campo está enfocado */
+.input-field:focus {
+    border-bottom: 2px solid #4caf50; /* Ejemplo de color verde */
+}
+
+/* Cambia el color del texto de la etiqueta cuando el campo está enfocado */
+.input-field:focus + label {
+    color: #4caf50; /* Ejemplo de color verde */
+}
