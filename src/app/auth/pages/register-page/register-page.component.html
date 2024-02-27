@@ -1,1 +1,141 @@
-<p>register-page works!</p>
+<div class="flex mb-10 h-auto w-auto bg-white drop-shadow-3xl border-2 rounded">
+  <form class="basis-full"
+        [formGroup]="registerForm"
+        (ngSubmit)="register()"
+        >
+
+    <div class="flex flex-col justify-between">
+
+        <div class="flex flex-col text-center basis-12/12 pt-4">
+              <span id="span-login" class="font-bold text-3xl">Register</span>
+          </div>
+
+          <!-- Sección para ID y BirthDate -->
+          <div class="mt-8">
+              <div class="flex flex-row justify-between">
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="id-number" class="text-xl font-bold pl-5">ID Number</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="text" id="id-number" class="input-field" name="id-number" placeholder="ID Number" formControlName="idNumber">
+                          <span *ngIf="isValidField('idNumber')"  class="text-red-800">
+                           este campo es obligatorio
+                        </span>
+                      </div>
+                  </div>
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="birthdate" class="text-xl font-bold pl-5">BirthDate</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="date" id="birthdate" class="input-field" name="birthdate" formControlName="birthDate">
+                          <span *ngIf="isValidField('birthDate')"  class="text-red-800">
+                            este campo es obligatorio
+                         </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Sección para Name y Last Name -->
+          <div class="mt-4">
+              <div class="flex flex-row justify-between">
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="name" class="text-xl font-bold pl-5">Name</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="text" id="name" class="input-field" name="name" placeholder="Name" formControlName="name">
+                          <span *ngIf="isValidField('name')"  class="text-red-800">
+                           el nombre es obligatorio
+                         </span>
+                      </div>
+                  </div>
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="lastname" class="text-xl font-bold pl-5">Last Name</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="text" id="lastname" class="input-field" name="lastname" placeholder="Last Name" formControlName="lastName">
+                          <span *ngIf="isValidField('lastName')"  class="text-red-800">
+                            el apellido es obligatorio
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Sección para Phone Number y Email -->
+          <div class="mt-4">
+              <div class="flex flex-row justify-between">
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="phone" class="text-xl font-bold pl-5">Phone Number</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="text" id="phone" class="input-field" name="phone" placeholder="Phone Number" formControlName="phoneNumber">
+                          <span *ngIf="isValidField('phoneNumber')"  class="text-red-800">
+                            este campo es obligatorio
+                         </span>
+                      </div>
+                  </div>
+                  <div class="basis-6/12 flex flex-col justify-start">
+                      <div class="flex flex-col">
+                          <label for="email" class="text-xl font-bold pl-5">Email</label>
+                      </div>
+                      <div class="flex flex-col mx-5">
+                          <input type="email" id="email" class="input-field" name="email" placeholder="Email"  formControlName="email">
+                          <span *ngIf="isValidField('email')"  class="text-red-800">
+                           el email es obligatorio
+                         </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Sección para Password -->
+          <div class="mt-8">
+              <div class="flex flex-col justify-start">
+                  <div class="flex flex-col">
+                      <label for="password" class="text-2xl font-bold pl-5">Password</label>
+                  </div>
+                  <div class="flex flex-col mx-5">
+                      <input type="password" id="password" class="input-field" name="password"  formControlName="password">
+                      <span *ngIf="isValidField('password')"  class="text-red-800">
+                        contraseña invalida
+                     </span>
+                  </div>
+              </div>
+              <div class="flex flex-col justify-start">
+                <div class="flex flex-col">
+                    <label for="password" class="text-2xl font-bold pl-5">Confirm password</label>
+                </div>
+                <div class="flex flex-col mx-5">
+                    <input type="password" id="confirm-password" class="input-field" name="confirm-password" formControlName="confirmPassword">
+                    <span *ngIf="isValidField('confirmPassword')"  class="text-red-800">
+                      Las contraseñas deben de ser iguales
+                 </span>
+                </div>
+            </div>
+          </div>
+          <div class="flex flex-row justify-end mt-4 pl-6 pr-2">
+              <div class="basis-4/12 text-blue-600">
+                  <a class="cursor-pointer text-xl" routerLink="/auth/login">Login!</a>
+              </div>
+          </div>
+
+          <div class="flex flex-row justify-center mt-8 mb-8">
+              <div class="flex flex-col basis-4/12">
+                  <button
+                          type="submit"
+                          class="border bg-sky-500 hover:drop-shadow-2xl py-3 rounded text-lg font-semibold"
+                          [ngClass]="{ 'opacity-50 cursor-not-allowed': registerForm.invalid }"
+                          [disabled]="registerForm.invalid">
+                      Register
+                  </button>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
